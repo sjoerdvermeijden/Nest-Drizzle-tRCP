@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:13
+    container_name: ${DB_CONTAINER_NAME:-postgres_dev}
+    environment:
+      POSTGRES_DB: ${DB_NAME:-restaurant_db}
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-local}
+    ports:
+      - '${DB_PORT:-5432}:5432'
