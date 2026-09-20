@@ -18,7 +18,7 @@ export class TrpcOpenApiController implements OnModuleInit {
     this.openApiDocument = generateOpenApiDocument(this.appRouter, {
       title: 'My API',
       version: '1.0.0',
-      baseUrl: 'http://localhost:3000/api',
+      baseUrl: 'http://localhost:3000/docs',
     });
   }
 
