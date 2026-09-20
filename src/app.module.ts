@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DrizzleModule } from './drizzle/drizzle.module';
+import { TrpcOpenApiController } from './openapi/trpc-openapi.controller';
 import { ConfigModule } from '@nestjs/config';
 import { TRPCModule } from 'nestjs-trpc';
 
@@ -12,7 +13,7 @@ import { TRPCModule } from 'nestjs-trpc';
       basePath: '/trpc',
     }),
     ConfigModule.forRoot({ isGlobal: true })],
-  controllers: [AppController],
+  controllers: [AppController, TrpcOpenApiController],
   providers: [AppService],
 })
 export class AppModule {}
