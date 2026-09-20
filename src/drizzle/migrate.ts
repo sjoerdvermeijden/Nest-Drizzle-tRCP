@@ -8,14 +8,23 @@ import { exit } from 'process';
 
 import * as allSchema from './schema';
 
-dotenv.config();
+dotenv.config({
+  path: path.resolve(process.cwd(), '.env'),
+  override: true,
+});
 
 (async () => {
+  const databaseUrl = process.env.DATABASE_URL;
+  if (!databaseUrl) {
+    throw new Error('DATABASE_URL is required to run migrations');
+  }
+
   const pool = new pg.Pool({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: databaseUrl,
   });
   let db: NodePgDatabase<typeof allSchema> | null = null;
-  db = drizzle(pool, {
+  db = drizzle({
+    client: pool,
     schema: {
       ...allSchema,
     },
