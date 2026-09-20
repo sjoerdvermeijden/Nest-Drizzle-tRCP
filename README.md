@@ -1,8 +1,8 @@
 # NestJS + Drizzle setup
 
-### Vereist
+## Vereist
 
-Docker, een handige GUI hiervoor is Docker Desktop
+- Docker, een handige GUI hiervoor is Docker Desktop
 
 ## Om het project draaiende te krijgen
 
@@ -22,9 +22,13 @@ Initialiseer het project:
 npm install
 ```
 
-Gevolgd door:
+Draai de database:
 ```
 docker compose up
+```
+
+Draai het project:
+```
 npm run start
 ```
 
