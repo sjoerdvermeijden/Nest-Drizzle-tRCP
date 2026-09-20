@@ -1,5 +1,9 @@
 # NestJS + Drizzle setup
 
+### Vereist
+
+Docker, een handige GUI hiervoor is Docker Desktop
+
 ## Om het project draaiende te krijgen
 
 - Maak een `.env` bestand aan met de database gegevens
@@ -66,4 +70,17 @@ async findAll() {
   const allCars = await this.db.select().from(schema.cars);
   return allCars;
 }
+```
+
+## Drizzle schema
+
+Genereer schema en migreer het naar de database:
+```
+npm run generate
+npm run migrate
+```
+
+Bekijk de database tabellen in Drizzle Studio
+```
+npx drizzle-kit studio
 ```
