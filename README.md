@@ -61,10 +61,10 @@ import { DrizzleModule } from '../drizzle/drizzle.module';
 
 @Module({
   imports: [DrizzleModule],
-  controllers: [MealsController],
-  providers: [MealsService],
+  controllers: [CarsController],
+  providers: [CarsService],
 })
-export class MealsModule {}
+export class CarsModule {}
 ```
 
 ### 4. Fetch data van de resource in {{resource}}.service.ts
